@@ -19,6 +19,7 @@ public class OrderItem {
         this.unitPrice = product.getPrice();
         this.quantity = quantity;
     }
+
     public BigDecimal getLineTotal(){
         return unitPrice.multiply(BigDecimal.valueOf(quantity));
     }
