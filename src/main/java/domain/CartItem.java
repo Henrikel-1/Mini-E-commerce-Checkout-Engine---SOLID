@@ -2,7 +2,7 @@ package domain;
 
 public class CartItem {
     private Product product;
-    private double quantity;
+    private int quantity;
 
     public Product getProduct() {
         return product;
@@ -12,11 +12,11 @@ public class CartItem {
         this.product = product;
     }
 
-    public double getQuantity() {
+    public int getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(double quantity) {
+    public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
 }
