@@ -19,13 +19,15 @@ public class Order {
 
     public Order(List<OrderItem> orderItems) {
 
-        if (orderItems.isEmpty()){throw new InvalidOrderException("Cannot create an order with no items.");}
-
         if (orderItems == null){throw new InvalidOrderException("Order items must be provided.");}
+
+        if (orderItems.isEmpty()){throw new InvalidOrderException("Cannot create an order with no items.");}
 
         this.status = OrderStatus.CREATED;
         this.orderId = UUID.randomUUID().toString();
-        this.orderItems = orderItems;
+
+        this.orderItems = new ArrayList<>(orderItems); //Criando Cópia para evitar alteração fora do Order.
+
         this.createdAt = LocalDateTime.now();
         calculateSubTotal();
 
